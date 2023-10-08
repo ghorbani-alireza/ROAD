@@ -1,8 +1,4 @@
-ROAD in R
+A ROAD to Classification in High Dimensional Space
 ================
 
-R Code for the high dimensional classification method introduced in the
-paper: “A ROAD to Classification in High Dimensional Space (2010)”
-
-In this repository, I have just translated the Matlab code wrote by the authors
-of the paper into R code. (The matlab code is also uploaded)
+This repository contains all R code for the high dimensional classification method introduced in the paper “A ROAD to Classification in High Dimensional Space (2010)” which can be found [here](https://www.google.com/search?client=firefox-b-d&q=personalized+&bshm=rime/1).
