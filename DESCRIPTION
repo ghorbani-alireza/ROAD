@@ -1,0 +1,13 @@
+Package: ROAD
+Title: Regularized Optimal Affine Discriminant for High-Dimensional Classification
+Version: 0.1.0
+Authors@R: person("Alireza", "Ghorbani", email = "ghorbanialireza@outlook.com", role = c("aut", "cre"))
+Description: Implements the ROAD algorithm for high-dimensional classification as described in the paper "A ROAD to Classification in High Dimensional Space (2010)".
+License: MIT
+Encoding: UTF-8
+Depends: R (>= 3.6.0)
+Imports:
+    stats,
+    MASS
+RoxygenNote: 7.3.2
+
