@@ -1,10 +1,8 @@
 # ROAD: Regularized Optimal Affine Discriminant
 
-![ROAD Logo](https://via.placeholder.com/150) <!-- Add a logo if you have one -->
-
 **ROAD** is an R package that implements the **Regularized Optimal Affine Discriminant (ROAD)** algorithm for high-dimensional classification. This package is a translation of the MATLAB implementation described in the paper:
 
-> Fan, J., Feng, Y., & Tong, X. (2012). **A ROAD to Classification in High Dimensional Space**. [PDF](http://yangfeng.hosting.nyu.edu/publication/fan-2012-road/fan-2012-road.pdf)
+> Fan, J., Feng, Y., & Tong, X. (2012). **A ROAD to Classification in High Dimensional Space**. [PDF]( https://doi.org/10.1111/j.1467-9868.2012.01029.x)
 
 The ROAD algorithm addresses the challenges of high-dimensional classification by incorporating covariance information and regularization, leading to improved classification accuracy.
 
