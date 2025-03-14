@@ -1,11 +1,91 @@
-A ROAD to Classification in High-Dimensional Space
-================
+# ROAD: Regularized Optimal Affine Discriminant
 
-This repository contains all the R code for the high dimensional classification method introduced in the paper “A ROAD to Classification in High Dimensional Space (2010)” which can be found [here](http://yangfeng.hosting.nyu.edu/publication/fan-2012-road/fan-2012-road.pdf).
+![ROAD Logo](https://via.placeholder.com/150) <!-- Add a logo if you have one -->
 
-**Abstract:** For high dimensional classification, it is well known that naively performing the Fisher discriminant rule leads to poor results due to diverging spectra and accumulation of noise. Therefore, researchers proposed independence rules to circumvent the diverging spectra, and sparse independence rules to mitigate the issue of accumulation of noise. However, in
-biological applications, often a group of correlated genes are responsible for clinical outcomes, and the use of the covariance information can significantly reduce misclassification rates. In theory, the extent of such error rate reductions is unveiled by comparing the misclassification rates of the Fisher discriminant rule and the independence rule. To materialize the gain on the basis of finite samples, a regularized optimal affine discriminant (ROAD) is proposed. The ROAD
-selects an increasing number of features as the regularization relaxes. Further benefits can be achieved when a screening method is employed to narrow the feature pool before applying the ROAD method. An efficient constrained co-ordinate descent algorithm is also developed to solve the associated optimization problems. Sampling properties of oracle type are established. Simulation studies and real data analysis support our theoretical results and demonstrate the
-advantages of the new classification procedure under a variety of correlation structures. A delicate result on continuous piecewise linear solution paths for the ROAD optimization problem at the population level justifies the linear interpolation of the constrained co-ordinate descent algorithm.
+**ROAD** is an R package that implements the **Regularized Optimal Affine Discriminant (ROAD)** algorithm for high-dimensional classification. This package is a translation of the MATLAB implementation described in the paper:
 
-**Keywords:** Fisher discriminant; High dimensional classification; Independence rule; Linear discriminant analysis; Regularized optimal affine discriminant
+> Fan, J., Feng, Y., & Tong, X. (2012). **A ROAD to Classification in High Dimensional Space**. [PDF](http://yangfeng.hosting.nyu.edu/publication/fan-2012-road/fan-2012-road.pdf)
+
+The ROAD algorithm addresses the challenges of high-dimensional classification by incorporating covariance information and regularization, leading to improved classification accuracy.
+
+---
+
+## 📦 Installation
+
+You can install the **ROAD** package directly from GitHub using the `devtools` package:
+
+```R
+install.packages("devtools")  # Install devtools if you don't have it
+devtools::install_github("yourusername/ROAD")
+```
+
+## 🚀 Quick Start
+
+Here’s a quick example to get you started with the ROAD package:
+
+```R
+library(ROAD)
+
+# Generate simulated data
+sim_data <- simulate_road_data(p = 1000, n = 300, s0 = 10, rho = 0.5, randSeed = 1)
+
+# Extract training and testing data
+x <- sim_data$x
+y <- sim_data$y
+xtest <- sim_data$xtest
+ytest <- sim_data$ytest
+
+# Fit the ROAD model
+fit <- road(x, y)
+
+# Perform cross-validation
+fit_cv <- roadCV(x, y, fit)
+
+# Make predictions
+predictions <- roadPredict(xtest, fit, fit_cv)
+
+# Calculate test error
+test_error <- mean(predictions$class != ytest)
+cat("Test Error:", test_error, "\n")
+```
+
+---
+
+## 🛠️ Features
+
+High-Dimensional Classification: Handles datasets with a large number of features.
+
+Regularization: Incorporates regularization to improve classification accuracy.
+
+Cross-Validation: Includes tools for cross-validation to evaluate model performance.
+
+Simulation Tools: Provides functions to generate simulated data for testing and demonstration.
+
+## 📖 Documentation
+
+For detailed documentation, check out the help pages for each function:
+
+```R
+?simulate_road_data  # Generate simulated data
+?road                # Fit the ROAD model
+?roadCV              # Perform cross-validation
+?roadPredict         # Make predictions
+```
+
+##📜 License
+
+This package is licensed under the MIT License. See the LICENSE file for details.
+
+##🙏 Acknowledgments
+
+The original MATLAB implementation by Yang Feng.
+The authors of the paper for their groundbreaking work on high-dimensional classification.
+
+## 📧 Contact
+
+For questions, feedback, or contributions, please contact:
+
+    Alireza Ghorbani
+    Email: ghorbanialireza@outlook.com
+
+Enjoy using ROAD! 🎉
