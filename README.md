@@ -14,7 +14,7 @@ You can install the **ROAD** package directly from GitHub using the `devtools` p
 
 ```R
 install.packages("devtools")  # Install devtools if you don't have it
-devtools::install_github("yourusername/ROAD")
+devtools::install_github("ghorbani-alireza/ROAD")
 ```
 
 ## 🚀 Quick Start
